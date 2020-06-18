@@ -7,9 +7,10 @@ try {
 
     $sql = "select * from user"
     $result = $dbh->query($sql);
-    echo "接続成功\n";
+
+    print "接続成功\n";
 } catch (PDOException $e) {
-    echo "接続失敗: " . $e->getMessage() . "\n";
+    print "接続失敗: " . $e->getMessage() . "\n";
     exit();
 }
 ?>
@@ -23,10 +24,10 @@ try {
 <body>
 
 <div class="container">
+<h1>hello,world</h1>
 <?php foreach($result as $value){
     echo "<h1>$value[id] $value[name] $value[age]</h1>"
-}
-?>
+} ?>
 </div>
     
 </body>
