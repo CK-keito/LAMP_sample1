@@ -14,14 +14,14 @@ try {
     $stmt = $dbh->prepare($sql);
     $params = array(':id' => $id, ':name' => $name, ':age' => $age);
 
-    $result = $dbh->query($sql);
+    $stmt->execute($parmas);
 
     header('Location: index.php?fg=1');
 
     print "接続成功\n";
 } catch (PDOException $e) {
     print "接続失敗: " . $e->getMessage() . "\n";
-    header('Location: index.php?fg=1')
+    header('Location: index.php?fg=0?err=' $e->getMessage())
     exit();
 }
 ?>
