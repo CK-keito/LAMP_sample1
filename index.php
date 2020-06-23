@@ -83,7 +83,36 @@ try {
 
             </div>
             <div id="tab2" class="tab-pane">
-                <p>SAMPLE2</p></div>
+                <form action="./insert.php" class="mt-5" method="POST">
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" for="id">Id</label>
+                        <div class="col-sm-10">
+                    <input class="form-control" type="text" name="id" id="id">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" for="name">Name</label>
+                        <div class="col-sm-10>"
+                    <input class="form-control" type="text" name="name" id="name">
+                        </div>
+                </div>
+
+                <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" for="age">Age</label>
+                        <div class="col-sm-10>"
+                    <input class="form-control" type="text" name="age" id="age">
+                        </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Insert<button>
+
+                </form>
+
+                            
+            
+            
+            </div>
             <div id="tab3" class="tab-pane"><p>SAMPLE3</p>
             </div>
             <div id="tab4" class="tab-pane">
