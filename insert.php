@@ -21,7 +21,7 @@ try {
     print "接続成功\n";
 } catch (PDOException $e) {
     print "接続失敗: " . $e->getMessage() . "\n";
-    header('Location: index.php?fg=0?err=' .$e->getMessage())
+    header('Location: index.php?fg=0?err->getMessage());
     exit();
 }
 ?>
