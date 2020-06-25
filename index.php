@@ -47,11 +47,21 @@ try {
 
     <div class="container">
         <?php if($_GET['fg'] == 1){ ?>
-            <p>succeeded</p>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Succeeded</strong> Processiong is completed!
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
 
         <?php }
             else if($_GET['fg'] == 2){ ?>
-                <p>failed</p>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Failed</strong> Processiong could not be worked...
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
        <?php } ?>
     </div>
 
