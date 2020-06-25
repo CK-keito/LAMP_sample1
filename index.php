@@ -45,6 +45,20 @@ try {
         </div>    
     </div>
 
+    <div class="container">
+        <?php if($_GET['fg'] == 1){ ?>
+            <p>succeeded</p>
+
+        <?php }
+            else if($_GET['fg'] == 2){ ?>
+                <p>failed</p>
+       <?php } ?>
+    </div>
+
+
+
+
+
     <!-- div.container>ul.nav.nav-tabs>(li.nav-item>a.nav-link{test})*4 -->
     <div class="container">
         <ul class="nav nav-tabs">
