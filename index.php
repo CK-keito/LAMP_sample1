@@ -7,10 +7,11 @@ try {
 
     $sql = "select * from user";
     $result = $dbh->query($sql);
+    $del_list = $dbh->query($sql);
 
-    print "接続成功\n";
+    // print "接続成功\n";
 } catch (PDOException $e) {
-    print "接続失敗: " . $e->getMessage() . "\n";
+    // print "接続失敗: " . $e->getMessage() . "\n";
     exit();
 }
 ?>
@@ -113,7 +114,7 @@ try {
             </div>
 
             <div id="tab3" class="tab-pane">
-                <form action="./update.php" class="mt-5" method="POST">
+                <form action="./update.php" class="mt-5" method="$_POST">
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label" for="id">Id</label>
                         <div class="col-sm-10">
@@ -142,7 +143,35 @@ try {
                 </form>
             </div>
             <div id="tab4" class="tab-pane">
-                <p>SAMPLE4</p>
+                <table class="table table-striped mt-2"><!-- mtはmargintopの略 -->
+                    
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>id</th>
+                            <th>name</th>
+                            <th>age</th>
+                            <th>-<th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach($del_list as $value){?>
+                        <tr>
+                            <th><?php echo "$value[id]"?></th>
+                            <td><?php echo "$value[name]"?></td>
+                            <td><?php echo "$value[age]"?></td>
+                            <td>
+                            <form action="./delete.php" method="$_GET">
+                                <input type="text" class="d-none" name="id" value="<?php echo "$value[id]" ?>">
+                                <button type="submit" class="btn btn-danger">Delete</button>
+
+                            </form>
+                            </td>
+                        </tr>
+                        <?php }?>
+
+                     
+                    </tbody>
+                </table>
             </div>
         </div>
 
