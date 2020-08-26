@@ -9,9 +9,9 @@ try {
     $result = $dbh->query($sql);
     $del_list = $dbh->query($sql);
 
-    // print "接続成功\n";
+    
 } catch (PDOException $e) {
-    // print "接続失敗: " . $e->getMessage() . "\n";
+    echo "接続失敗:" . $e->getMessage() . "\n";
     exit();
 }
 ?>
